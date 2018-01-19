@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>No Seen Extension</title>
+    <style>
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            font-family: -apple-system, BlinkMacSystemFont,  'Roboto', 'Helvetica Neue', sans-serif;
+        }
+
+        #main {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 5px 50px;
+        }
+    </style>
+</head>
+<body>
+    <main id='main'>
+        <h1>Preferences</h1>
+        <h4>Enable for the following websites:</h4>
+
+        <p>
+            <input id='instagram' type='checkbox'>
+            <label for='instagram'>Instagram</label>
+        </p>
+
+        <p>
+            <input id='facebook' type='checkbox'>
+            <label for='facebook'>Facebook</label>
+        </p>
+
+        <button type='button' id='save'>Save</button>
+    </main>
+
+    <script src='preferences.js'></script>
+</body>
+</html>
