@@ -4,7 +4,7 @@ A browser extension that blocks "seen" marks, because **privacy**.
 Currently supporting Facebook and Instagram.
 
 ## Support
-Works for Chrome, Firefox and Opera, or any browser that supports [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
+Works for Chrome, Firefox, Opera, and any browser that supports [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
 
 The extension is available on the following stores: [**Firefox addons**](https://addons.mozilla.org/firefox/addon/no-seen) and [**Opera addons**](addons.opera.com/en/extensions/details/no-seen).
 
