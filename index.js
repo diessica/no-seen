@@ -5,6 +5,12 @@ const BLOCKED_URLS = [
 	'*://*.instagram.com/stories/reel/seen',
 ]
 
+// Chrome support: `browser` should fallback to `chrome`
+// since Chrome doesn't fully support WebExtensions
+if (typeof browser === "undefined") {
+	browser = chrome;
+}
+
 const shouldCancel = (url, storage) => {
 	const isAble = key => url.includes(key) && storage.get()
 		.then(s => s[key] !== false)
