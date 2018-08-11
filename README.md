@@ -12,7 +12,7 @@ For **manual installation**, download the [latest release](https://github.com/di
 
 
 ### Websites
-> You can disable No Seen for a specific website by going to the extension preferences in your browser.
+> You can disable No Seen for a specific website by going to the extension preferences in all browsers [except Chrome](https://github.com/diessica/no-seen/issues/2).
 
 - Instagram (specifically Stories)
 - Facebook (specifically Messenger)

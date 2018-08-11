@@ -1,32 +1,45 @@
 const INSTAGRAM_KEY = 'instagram'
 const FACEBOOK_KEY = 'facebook'
-const BLOCKED_URLS = [
-	'*://*.facebook.com/ajax/mercury/change_read_status.php*',
-	'*://*.instagram.com/stories/reel/seen',
+const URLS_TO_CANCEL = [
+    '*://*.facebook.com/ajax/mercury/change_read_status.php*',
+    '*://*.instagram.com/stories/reel/seen',
 ]
+
+const isNodeEnv = typeof exports !== 'undefined'
 
 // Chrome support: `browser` should fallback to `chrome`
 // since Chrome doesn't fully support WebExtensions
-if (typeof browser === "undefined") {
-	browser = chrome;
+if (typeof browser === 'undefined' && !isNodeEnv) {
+    browser = chrome
 }
 
-const shouldCancel = (url, storage) => {
-	const isAble = key => url.includes(key) && storage.get()
-		.then(s => s[key] !== false)
+const shouldCancelRequest = (url, storage) => {
+    const isCancellable = key => {
+        if (chrome) {
+            // See: https://github.com/diessica/no-seen/issues/2
+            return true
+        }
 
-	return isAble(FACEBOOK_KEY) || isAble(INSTAGRAM_KEY)
+        return url.includes(key) && storage.get().then(s => s[key] !== false)
+    }
+
+    return {
+        cancel: [FACEBOOK_KEY, INSTAGRAM_KEY].some(isCancellable),
+    }
 }
 
-const onCancel = ({ originUrl: url }) =>
-	shouldCancel(url, browser.storage.sync)
-		.then(cancel => ({ cancel }))
+const handleRequest = ({ url }) =>
+    shouldCancelRequest(url, browser.storage.sync)
 
-const init = () => browser.webRequest.onBeforeRequest
-	.addListener(onCancel, { urls: BLOCKED_URLS }, ['blocking'])
+const listenToRequests = () =>
+    browser.webRequest.onBeforeRequest.addListener(
+        handleRequest,
+        { urls: URLS_TO_CANCEL },
+        ['blocking']
+    )
 
-if (typeof browser === 'undefined' && typeof exports !== 'undefined') {
-	exports.shouldCancel = shouldCancel
+if (typeof browser === 'undefined' && isNodeEnv) {
+    exports.shouldCancelRequest = shouldCancelRequest
 } else {
-	init()
+    listenToRequests()
 }
