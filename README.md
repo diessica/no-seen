@@ -6,7 +6,7 @@ Currently supporting Facebook and Instagram.
 ## Support
 Works for Chrome, Firefox, Opera, and any browser that supports [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions).
 
-The extension is available on the following stores: [**Firefox addons**](https://addons.mozilla.org/firefox/addon/no-seen) and [**Opera addons**](addons.opera.com/en/extensions/details/no-seen).
+The extension is available on the following stores: [**Firefox addons**](https://addons.mozilla.org/firefox/addon/no-seen), [**Opera addons**](addons.opera.com/en/extensions/details/no-seen), and [**Chrome Web Store**](https://chrome.google.com/webstore/detail/no-seen/lhfgjcfhkmijfeppjjokleldddlklpoc).
 
 For **manual installation**, download the [latest release](https://github.com/diessica/no-seen/releases), unpack it, and load manually as an unpacked extension in your browser. (See tutorial: [Loading an unpacked extension](https://dev.opera.com/extensions/testing/#loading-an-unpacked-extension))
 
