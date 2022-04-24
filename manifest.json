@@ -1,7 +1,7 @@
 {
   "name": "No Seen",
   "description": "Blocks \"seen\" marks on Facebook Messenger and Instagram Stories.",
-  "version": "1.2",
+  "version": "1.3",
   "manifest_version": 2,
   "background": {
     "scripts": ["index.js"]
