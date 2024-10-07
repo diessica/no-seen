@@ -1,3 +1,5 @@
+> No longer maintained, see https://github.com/diessica/no-seen/issues/7#issuecomment-2389106201. Open for future collaborations on the topic of digital privacy.
+ 
 # No Seen 👀
 A browser extension that blocks "seen" marks, because **privacy**.
 
